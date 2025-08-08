@@ -55,7 +55,7 @@
 				class="inline-block -mt-1 mr-2 bg-accent-red p-2 rounded-full overflow-visible"
 				color="black"
 			/>
-			Video conversion
+			视频转换
 		</h2>
 		<p
 			class={clsx("text-sm font-normal", {
@@ -64,90 +64,83 @@
 				"!text-muted": vertdCommit === "loading",
 			})}
 		>
-			status: {vertdCommit
+			状态: {vertdCommit
 				? vertdCommit === "loading"
-					? "loading..."
-					: `available, commit id ${vertdCommit}`
-				: "unavailable (is the url right?)"}
+					? "加载中..."
+					: `可用，提交ID ${vertdCommit}`
+				: "不可用（URL是否正确？）"}
 		</p>
 		<div class="flex flex-col gap-8">
 			<div class="flex flex-col gap-4">
 				<p class="text-sm text-muted font-normal">
-					The <code>vertd</code> project is a server wrapper for FFmpeg.
-					This allows you to convert videos through the convenience of
-					VERT's web interface, while still being able to harness the power
-					of your GPU to do it as quickly as possible.
+					<code>vertd</code>项目是FFmpeg的服务器包装器。
+					这允许您通过VERT的Web界面的便利性转换视频，同时仍然能够利用GPU的力量尽可能快地完成转换。
 				</p>
 				<p class="text-sm text-muted font-normal">
-					We host a public instance for your convenience, but it is
-					quite easy to host your own on your PC or server if you know
-					what you are doing. You can download the server binaries <a
+					我们为您的便利托管了一个公共实例，但如果您知道自己在做什么，在您的PC或服务器上托管自己的实例也很容易。您可以下载服务器二进制文件<a
 						href={GITHUB_URL_VERTD}
-						target="_blank">here</a
-					> - the process of setting this up will become easier in the
-					future, so stay tuned!
+						target="_blank">这里</a
+					> - 设置过程在未来会变得更容易，敬请期待！
 				</p>
 				<div class="flex flex-col gap-2">
-					<p class="text-base font-bold">Instance URL</p>
+					<p class="text-base font-bold">实例URL</p>
 					<input
 						type="text"
-						placeholder="Example: http://localhost:24153"
+						placeholder="示例: http://localhost:24153"
 						bind:value={settings.vertdURL}
 					/>
 				</div>
 				<div class="flex flex-col gap-4">
 					<div class="flex flex-col gap-2">
-						<p class="text-base font-bold">Conversion speed</p>
+						<p class="text-base font-bold">转换速度</p>
 						<p class="text-sm text-muted font-normal">
-							This describes the tradeoff between speed and
-							quality. Faster speeds will result in lower quality,
-							but will get the job done quicker.
+							这描述了速度和质量之间的权衡。更快的速度会导致质量降低，但会更快地完成任务。
 						</p>
 					</div>
 					<Dropdown
 						options={[
-							"Very Slow",
-							"Slower",
-							"Slow",
-							"Medium",
-							"Fast",
-							"Ultra Fast",
+							"极慢",
+							"较慢",
+							"慢",
+							"中等",
+							"快",
+							"极快",
 						]}
 						settingsStyle
 						selected={(() => {
 							switch (settings.vertdSpeed) {
 								case "verySlow":
-									return "Very Slow";
+									return "极慢";
 								case "slower":
-									return "Slower";
+									return "较慢";
 								case "slow":
-									return "Slow";
+									return "慢";
 								case "medium":
-									return "Medium";
+									return "中等";
 								case "fast":
-									return "Fast";
+									return "快";
 								case "ultraFast":
-									return "Ultra Fast";
+									return "极快";
 							}
 						})()}
 						onselect={(selected) => {
 							switch (selected) {
-								case "Very Slow":
+								case "极慢":
 									settings.vertdSpeed = "verySlow";
 									break;
-								case "Slower":
+								case "较慢":
 									settings.vertdSpeed = "slower";
 									break;
-								case "Slow":
+								case "慢":
 									settings.vertdSpeed = "slow";
 									break;
-								case "Medium":
+								case "中等":
 									settings.vertdSpeed = "medium";
 									break;
-								case "Fast":
+								case "快":
 									settings.vertdSpeed = "fast";
 									break;
-								case "Ultra Fast":
+								case "极快":
 									settings.vertdSpeed = "ultraFast";
 									break;
 							}

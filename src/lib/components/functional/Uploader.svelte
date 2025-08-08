@@ -98,7 +98,7 @@
 			<UploadIcon class="w-full h-full text-on-accent" />
 		</div>
 		<h2 class="text-center text-2xl font-semibold mt-4">
-			Drop or click to {jpegify ? "JPEGIFY" : "convert"}
+			拖放或点击来{jpegify ? "JPEGIFY" : "转换"}
 		</h2>
 	</Panel>
 </button>

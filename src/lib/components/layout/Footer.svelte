@@ -3,8 +3,8 @@
 
 	const items = Object.entries({
 		//"Privacy policy": "#",
-		"Source code": GITHUB_URL_VERT,
-		"Discord server": DISCORD_URL,
+		"源码": GITHUB_URL_VERT,
+		"Discord服务器": DISCORD_URL,
 	});
 
 	const year = new Date().getFullYear();

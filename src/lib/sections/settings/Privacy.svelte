@@ -15,26 +15,23 @@
 				class="inline-block -mt-1 mr-2 bg-accent-blue p-2 rounded-full"
 				color="black"
 			/>
-			Privacy
+			隐私
 		</h2>
 		<div class="flex flex-col gap-8">
 			<div class="flex flex-col gap-4">
 				<div class="flex flex-col gap-2">
-					<p class="text-base font-bold">Plausible analytics</p>
+					<p class="text-base font-bold">Plausible分析</p>
 					<p class="text-sm text-muted font-normal">
-						We use <a
+						我们使用<a
 							href="https://plausible.io/privacy-focused-web-analytics"
 							target="_blank"
 							rel="noopener noreferrer">Plausible</a
-						>, a privacy-focused analytics tool, to gather
-						completely anonymous statistics. All data is anonymized
-						and aggregated, and no identifiable information is ever
-						sent or stored. You can view the analytics
+						>，一个注重隐私的分析工具，来收集完全匿名的统计数据。所有数据都是匿名和聚合的，永远不会发送或存储可识别的信息。您可以查看分析
 						<a
 							href="https://ats.vert.sh/vert.sh"
 							target="_blank"
-							rel="noopener noreferrer">here</a
-						> and choose to opt out below.
+							rel="noopener noreferrer">这里</a
+						>并在下面选择退出。
 					</p>
 				</div>
 				<div class="flex flex-col gap-3 w-full">
@@ -48,7 +45,7 @@
 								: ''} flex-1 p-4 rounded-lg text-black dynadark:text-white flex items-center justify-center"
 						>
 							<PlayIcon size="24" class="inline-block mr-2" />
-							Opt-in
+							选择加入
 						</button>
 
 						<button
@@ -60,7 +57,7 @@
 								: 'selected'} flex-1 p-4 rounded-lg text-black dynadark:text-white flex items-center justify-center"
 						>
 							<PauseIcon size="24" class="inline-block mr-2" />
-							Opt-out
+							选择退出
 						</button>
 					</div>
 				</div>

@@ -31,9 +31,9 @@
 </script>
 
 <div class="mx-auto w-full max-w-[778px] flex flex-col gap-8">
-	<h1 class="text-5xl text-center">SECRET JPEGIFY!!!</h1>
+	<h1 class="text-5xl text-center">秘密JPEGIFY！！！</h1>
 	<p class="text-muted text-center -mt-4 font-normal italic">
-		(shh... don't tell anyone!)
+		（嘘...不要告诉任何人！）
 	</p>
 	<Uploader class="w-full h-64" jpegify={true} />
 	<input
@@ -49,7 +49,7 @@
 		onclick={jpegify}
 		disabled={processing}
 		class="btn bg-accent text-black rounded-2xl text-2xl w-full mx-auto"
-		>JPEGIFY {compressionInverted}%!!!</button
+		>JPEGIFY {compressionInverted}%！！！</button
 	>
 	<div class="flex flex-wrap flex-row justify-center gap-4">
 		{#each images as file, i (file.id)}
@@ -89,7 +89,7 @@
 							disabled={!!!file.result}
 							class="btn bg-accent text-black rounded-2xl text-2xl w-full mx-auto"
 						>
-							Download
+							下载
 						</button>
 						<button
 							onclick={() => {
@@ -103,7 +103,7 @@
 							}}
 							class="btn border-accent-red border-2 bg-transparent text-black dynadark:text-white rounded-2xl text-2xl w-full mx-auto"
 						>
-							Delete
+							删除
 						</button>
 					</div>
 				</Panel>

@@ -98,30 +98,30 @@
 	<meta name="theme-color" content="#F2ABEE" />
 	<meta
 		name="title"
-		content="{VERT_NAME} — Free, fast, and awesome file convert"
+		content="{VERT_NAME} — 免费、快速、出色的文件转换器"
 	/>
 	<meta
 		name="description"
-		content="With VERT you can quickly convert any image, video and audio file. No ads, no tracking, open source, and all processing (other than video) is done on your device."
+		content="使用VERT，您可以快速转换任何图像、视频和音频文件。无广告，无跟踪，开源，所有处理（除视频外）都在您的设备上完成。"
 	/>
 	<meta property="og:type" content="website" />
 	<meta
 		property="og:title"
-		content="{VERT_NAME} — Free, fast, and awesome file convert"
+		content="{VERT_NAME} — 免费、快速、出色的文件转换器"
 	/>
 	<meta
 		property="og:description"
-		content="With VERT you can quickly convert any image, video and audio file. No ads, no tracking, open source, and all processing (other than video) is done on your device."
+		content="使用VERT，您可以快速转换任何图像、视频和音频文件。无广告，无跟踪，开源，所有处理（除视频外）都在您的设备上完成。"
 	/>
 	<meta property="og:image" content={featuredImage} />
 	<meta property="twitter:card" content="summary_large_image" />
 	<meta
 		property="twitter:title"
-		content="{VERT_NAME} — Free, fast, and awesome file convert"
+		content="{VERT_NAME} — 免费、快速、出色的文件转换器"
 	/>
 	<meta
 		property="twitter:description"
-		content="With VERT you can quickly convert any image, video and audio file. No ads, no tracking, open source, and all processing (other than video) is done on your device."
+		content="使用VERT，您可以快速转换任何图像、视频和音频文件。无广告，无跟踪，开源，所有处理（除视频外）都在您的设备上完成。"
 	/>
 	<meta property="twitter:image" content={featuredImage} />
 	<link rel="manifest" href="/manifest.json" />

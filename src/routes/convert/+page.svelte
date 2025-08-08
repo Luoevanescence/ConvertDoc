@@ -120,23 +120,23 @@
 	<Panel class="p-5 flex flex-col min-w-0 gap-4 relative">
 		<div class="flex-shrink-0 h-8 w-full flex items-center gap-2">
 			{#if !converters.length}
-				<Tooltip text="Unknown file type" position="bottom">
+				<Tooltip text="未知文件类型" position="bottom">
 					<FileQuestionIcon size="24" class="flex-shrink-0" />
 				</Tooltip>
 			{:else if isAudio}
-				<Tooltip text="Audio file" position="bottom">
+				<Tooltip text="音频文件" position="bottom">
 					<AudioLines size="24" class="flex-shrink-0" />
 				</Tooltip>
 			{:else if isVideo}
-				<Tooltip text="Video file" position="bottom">
+				<Tooltip text="视频文件" position="bottom">
 					<FilmIcon size="24" class="flex-shrink-0" />
 				</Tooltip>
 			{:else if isDocument}
-				<Tooltip text="Document file" position="bottom">
+				<Tooltip text="文档文件" position="bottom">
 					<BookText size="24" class="flex-shrink-0" />
 				</Tooltip>
 			{:else}
-				<Tooltip text="Image file" position="bottom">
+				<Tooltip text="图像文件" position="bottom">
 					<ImageIcon size="24" class="flex-shrink-0" />
 				</Tooltip>
 			{/if}
@@ -172,11 +172,10 @@
 					class="h-full flex flex-col text-center justify-center text-failure"
 				>
 					<p class="font-body font-bold">
-						We can't convert this file.
+						我们无法转换此文件。
 					</p>
 					<p class="font-normal">
-						what are you doing..? you're supposed to run the vertd
-						server!
+						您在做什么..？您应该运行vertd服务器！
 					</p>
 				</div>
 			{:else}
@@ -184,11 +183,10 @@
 					class="h-full flex flex-col text-center justify-center text-failure"
 				>
 					<p class="font-body font-bold">
-						We can't convert this file.
+						我们无法转换此文件。
 					</p>
 					<p class="font-normal">
-						Only image, video, audio, and document files are
-						supported
+						仅支持图像、视频、音频和文档文件
 					</p>
 				</div>
 			{/if}
@@ -196,10 +194,10 @@
 			<div
 				class="h-full flex flex-col text-center justify-center text-failure"
 			>
-				<p class="font-body font-bold">We can't convert this file.</p>
+				<p class="font-body font-bold">我们无法转换此文件。</p>
 				<p class="font-normal">
-					Could not find the vertd instance to start video conversion.
-					Are you sure the instance URL is set correctly?
+					找不到vertd实例来启动视频转换。
+					您确定实例URL设置正确吗？
 				</p>
 			</div>
 		{:else}
@@ -251,27 +249,27 @@
 							onselect={(option) => handleSelect(option, file)}
 						/>
 						<div class="w-full flex items-center justify-between">
-							<Tooltip text="Convert this file" position="bottom">
-								<button
-									class="btn {$effects
-										? ''
-										: '!scale-100'} p-0 w-14 h-14 text-black {isAudio
-										? 'bg-accent-purple'
-										: isVideo
-											? 'bg-accent-red'
-											: isDocument
-												? 'bg-accent-green'
-												: 'bg-accent-blue'}"
-									disabled={!files.ready}
-									onclick={() => file.convert()}
-								>
-									<RotateCwIcon size="24" />
-								</button>
-							</Tooltip>
-							<Tooltip
-								text="Download this file"
-								position="bottom"
+													<Tooltip text="转换此文件" position="bottom">
+							<button
+								class="btn {$effects
+									? ''
+									: '!scale-100'} p-0 w-14 h-14 text-black {isAudio
+									? 'bg-accent-purple'
+									: isVideo
+										? 'bg-accent-red'
+										: isDocument
+											? 'bg-accent-green'
+											: 'bg-accent-blue'}"
+								disabled={!files.ready}
+								onclick={() => file.convert()}
 							>
+								<RotateCwIcon size="24" />
+							</button>
+						</Tooltip>
+						<Tooltip
+							text="下载此文件"
+							position="bottom"
+						>
 								<button
 									class="btn {$effects
 										? ''

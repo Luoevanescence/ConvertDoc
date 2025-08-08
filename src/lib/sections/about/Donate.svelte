@@ -68,7 +68,7 @@
 			paymentState = "prepay";
 			addToast(
 				"error",
-				"Error fetching payment details. Please try again later.",
+				"获取支付详情时出错。请稍后重试。",
 			);
 			return;
 		}
@@ -100,7 +100,7 @@
 		if (submitResult.error) {
 			addToast(
 				"error",
-				`Payment failed: ${submitResult.error.message}${submitResult.error.message?.endsWith(".") ? "" : "."} You have not been charged.`,
+				`支付失败: ${submitResult.error.message}${submitResult.error.message?.endsWith(".") ? "" : "."} 您没有被收费。`,
 			);
 			enablePay = true;
 			return;
@@ -118,10 +118,10 @@
 		if (res.error) {
 			addToast(
 				"error",
-				`Payment failed: ${res.error.message}${res.error.message?.endsWith(".") ? "" : "."} You have not been charged.`,
+				`支付失败: ${res.error.message}${res.error.message?.endsWith(".") ? "" : "."} 您没有被收费。`,
 			);
 		} else {
-			addToast("success", "Thank you for your donation!");
+			addToast("success", "感谢您的捐赠！");
 		}
 
 		paymentState = "prepay";
@@ -140,12 +140,12 @@
 		if (status) {
 			switch (status) {
 				case "succeeded":
-					addToast("success", "Thank you for your donation!");
+					addToast("success", "感谢您的捐赠！");
 					break;
 				default:
 					addToast(
 						"error",
-						"An error occurred while processing your donation. Please try again later.",
+						"处理您的捐赠时发生错误。请稍后重试。",
 					);
 			}
 
@@ -162,10 +162,10 @@
 			>
 				<HeartIcon color="black" />
 			</div>
-			Donate to VERT
+			捐赠给VERT
 		</h2>
 		<p class="text-base font-normal">
-			With your support, we can keep maintaining and improving VERT.
+			有了您的支持，我们可以继续维护和改进VERT。
 		</p>
 	</div>
 
@@ -192,7 +192,7 @@
 				)}
 			>
 				<HandCoinsIcon size="24" class="inline-block mr-2" />
-				One-time
+				一次性
 			</button>
 
 			<button
@@ -207,7 +207,7 @@
 				)}
 			>
 				<CalendarHeartIcon size="24" class="inline-block mr-2" />
-				Monthly
+				每月
 			</button>
 		</div>
 		<div class="grid grid-cols-4 gap-3 w-full">
@@ -229,7 +229,7 @@
 			<div class="flex items-center justify-center">
 				<FancyInput
 					bind:value={customAmount}
-					placeholder="Custom"
+					placeholder="自定义"
 					prefix="$"
 					type="number"
 				/>
@@ -303,8 +303,8 @@
 						onclick={paymentClick}
 						class="row-start-1 col-start-1 flex justify-center items-center"
 					>
-						<WalletIcon size="24" class="inline-block mr-2" />
-						Pay now
+											<WalletIcon size="24" class="inline-block mr-2" />
+					立即支付
 					</div>
 				{/if}
 			</div>

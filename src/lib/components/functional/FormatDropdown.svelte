@@ -214,7 +214,7 @@
 				<div class="relative">
 					<input
 						type="text"
-						placeholder="Search format"
+						placeholder="搜索格式"
 						class="flex-grow w-full !pl-11 !pr-3 rounded-lg bg-panel text-foreground"
 						bind:value={searchQuery}
 						oninput={handleSearch}

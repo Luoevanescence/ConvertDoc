@@ -15,25 +15,24 @@
 				class="inline-block -mt-1 mr-2 bg-accent p-2 rounded-full"
 				color="black"
 			/>
-			Conversion
+			转换
 		</h2>
 		<div class="flex flex-col gap-8">
 			<div class="flex flex-col gap-4">
 				<div class="flex flex-col gap-2">
-					<p class="text-base font-bold">File name format</p>
+					<p class="text-base font-bold">文件名格式</p>
 					<p class="text-sm text-muted font-normal">
-						This will determine the name of the file on download, <span
+						这将决定下载时文件的名称，<span
 							class="font-bold italic"
-							>not including the file extension.</span
+							>不包括文件扩展名。</span
 						>
-						You can put these following templates in the format, which
-						will be replaced with the relevant information:
+						您可以在格式中放置以下模板，它们将被相关信息替换：
 						<span class="font-bold">%name%</span>
-						for the original file name,
+						表示原始文件名，
 						<span class="font-bold">%extension%</span>
-						for the original file extension, and
+						表示原始文件扩展名，以及
 						<span class="font-bold">%date%</span>
-						for a date string of when the file was converted.
+						表示文件转换时的日期字符串。
 					</p>
 				</div>
 				<FancyTextInput

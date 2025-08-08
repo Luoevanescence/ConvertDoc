@@ -17,7 +17,7 @@
 		>
 			<LinkIcon color="black" />
 		</div>
-		Resources
+		资源
 	</h2>
 	<div class="flex gap-3">
 		<a
@@ -40,7 +40,7 @@
 				: '!scale-100'} flex-1 gap-2 p-4 rounded-full bg-button text-black dynadark:text-white flex items-center justify-center"
 		>
 			<GithubIcon size="24" class="inline-block mr-2" />
-			Source
+			源码
 		</a>
 		<a
 			href="mailto:{CONTACT_EMAIL}"
@@ -51,7 +51,7 @@
 				: '!scale-100'} flex-1 gap-2 p-4 rounded-full bg-button text-black dynadark:text-white flex items-center justify-center"
 		>
 			<MailIcon size="24" class="inline-block mr-2" />
-			Email
+			邮箱
 		</a>
 	</div>
 </Panel>

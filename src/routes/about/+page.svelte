@@ -80,7 +80,7 @@
 		try {
 			const response = await fetch(`${GITHUB_API_URL}/contributors`);
 			if (!response.ok) {
-				addToast("error", "Error fetching GitHub contributors");
+				addToast("error", "获取GitHub贡献者时出错");
 				throw new Error(`HTTP error, status: ${response.status}`);
 			}
 			const allContribs = await response.json();
@@ -135,7 +135,7 @@
 <div class="flex flex-col h-full items-center">
 	<h1 class="hidden md:block text-[40px] tracking-tight leading-[72px] mb-6">
 		<InfoIcon size="40" class="inline-block -mt-2 mr-2" />
-		About
+		关于
 	</h1>
 
 	<div

@@ -13,12 +13,12 @@
 		try {
 			navigator.clipboard.writeText("hello@vert.sh");
 			copied = true;
-			addToast("success", "Email copied to clipboard!");
+			addToast("success", "邮箱已复制到剪贴板！");
 
 			if (timeoutId) clearTimeout(timeoutId);
 			timeoutId = setTimeout(() => (copied = false), 2000);
 		} catch (err) {
-			error(`Failed to copy email: ${err}`);
+			error(`复制邮箱失败: ${err}`);
 		}
 	}
 </script>
@@ -30,7 +30,7 @@
 		>
 			<PiggyBankIcon color="black" />
 		</div>
-		Sponsors
+		赞助商
 	</h2>
 	<div class="mt-2 [&>*]:font-normal h-full flex justify-between flex-col">
 		<div class="flex gap-3 justify-center text-lg">
@@ -43,17 +43,16 @@
 			</a>
 		</div>
 		<p class="text-muted">
-			Want to support us? Contact a developer in the <a
+			想要支持我们？请联系<a
 				href={DISCORD_URL}
 				target="_blank">Discord</a
-			>
-			server, or send an email to
+			>服务器中的开发者，或发送邮件到
 			<span class="inline-block mx-[2px] relative top-[2px]">
 				<button
 					id="email"
 					class="flex items-center gap-[6px] cursor-pointer"
 					onclick={copyToClipboard}
-					aria-label="Copy email to clipboard"
+					aria-label="复制邮箱到剪贴板"
 				>
 					{#if copied}
 						<CheckIcon size="14"></CheckIcon>
@@ -62,7 +61,7 @@
 					{/if}
 					hello@vert.sh
 				</button>
-			</span>!
+			</span>！
 		</p>
 	</div>
 </Panel>

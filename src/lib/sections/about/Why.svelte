@@ -10,22 +10,15 @@
 		>
 			<MessageCircleQuestionIcon color="black" />
 		</div>
-		Why VERT?
+		为什么选择VERT？
 	</h2>
 	<p class="text-lg font-normal">
-		<b>File converters have always disappointed us.</b> They're ugly,
-		riddled with ads, and most importantly; slow. We decided to solve this
-		problem once and for all by making an alternative that solves all those
-		problems, and more.<br />
+		<b>文件转换器总是让我们失望。</b>它们很丑，充斥着广告，最重要的是；很慢。我们决定一劳永逸地解决这个问题，制作一个解决所有这些问题的替代方案，甚至更多。<br />
 		<br />
-		All non-video files are converted completely on-device; this means that there's
-		no delay between sending and receiving the files from a server, and we never
-		get to snoop on the files you convert.
+		所有非视频文件都在设备上完全转换；这意味着在向服务器发送和接收文件之间没有延迟，我们也永远不会窥探您转换的文件。
 		<br />
 		<br />
-		Video files get uploaded to our lightning-fast RTX 4000 Ada server. Your
-		videos stay on there for an hour if you do not convert them. If you do convert
-		the file, the video will stay on the server for an hour, or until it is downloaded.
-		The file will then be deleted from our server.
+		视频文件会上传到我们超快的RTX 4000 Ada服务器。如果您不转换它们，您的视频会在那里停留一小时。如果您确实转换了文件，视频将在服务器上停留一小时，或直到下载完成。
+		然后文件将从我们的服务器中删除。
 	</p>
 </Panel>

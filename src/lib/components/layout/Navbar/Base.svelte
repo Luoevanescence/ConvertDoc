@@ -33,13 +33,13 @@
 		}[]
 	>([
 		{
-			name: "Upload",
+			name: "上传",
 			url: "/",
 			activeMatch: (pathname) => pathname === "/",
 			icon: UploadIcon,
 		},
 		{
-			name: "Convert",
+			name: "转换",
 			url: "/convert/",
 			activeMatch: (pathname) =>
 				pathname === "/convert/" || pathname === "/convert",
@@ -47,13 +47,13 @@
 			badge: files.files.length,
 		},
 		{
-			name: "Settings",
+			name: "设置",
 			url: "/settings/",
 			activeMatch: (pathname) => pathname.startsWith("/settings"),
 			icon: SettingsIcon,
 		},
 		{
-			name: "About",
+			name: "关于",
 			url: "/about/",
 			activeMatch: (pathname) => pathname.startsWith("/about"),
 			icon: InfoIcon,
@@ -180,7 +180,7 @@
 			{@render link(item, i)}
 		{/each}
 		<div class="w-0.5 bg-separator h-full hidden md:flex"></div>
-		<Tooltip text="Toggle theme" position="right">
+		<Tooltip text="切换主题" position="right">
 			<button
 				onclick={() => {
 					const isDark =

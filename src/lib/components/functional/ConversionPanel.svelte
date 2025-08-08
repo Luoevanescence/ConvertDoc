@@ -27,7 +27,7 @@
 				disabled={!files.ready}
 			>
 				<RefreshCw size="24" />
-				<p>Convert all</p>
+				<p>转换全部</p>
 			</button>
 			<button
 				class="btn {$effects
@@ -37,7 +37,7 @@
 				onclick={() => files.downloadAll()}
 			>
 				<FolderArchiveIcon size="24" />
-				<p>Download all as .zip</p>
+				<p>全部下载为.zip</p>
 			</button>
 			{#if $isMobile}
 				<button
@@ -48,10 +48,10 @@
 					onclick={() => (files.files = [])}
 				>
 					<Trash2Icon size="24" />
-					<p>Remove all files</p>
+					<p>删除所有文件</p>
 				</button>
 			{:else}
-				<Tooltip text="Remove all files" position="right">
+				<Tooltip text="删除所有文件" position="right">
 					<button
 						class="btn p-4 {$effects
 							? ''
@@ -66,7 +66,7 @@
 		</div>
 		<div class="w-full bg-separator h-0.5 flex md:hidden"></div>
 		<div class="flex items-center gap-2">
-			<p class="whitespace-nowrap text-xl">Set all to</p>
+			<p class="whitespace-nowrap text-xl">全部设置为</p>
 			{#if files.requiredConverters.length === 1}
 				<FormatDropdown
 					onselect={(r) =>
@@ -79,7 +79,7 @@
 					{categories}
 				/>
 			{:else}
-				<Dropdown options={["N/A"]} disabled />
+				<Dropdown options={["不适用"]} disabled />
 			{/if}
 		</div>
 	</div>

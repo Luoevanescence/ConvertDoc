@@ -51,12 +51,11 @@
 		<div class="rounded-full bg-blue-300 p-2 inline-block mr-3 w-10 h-10">
 			<HeartHandshakeIcon color="black" />
 		</div>
-		Credits
+		致谢
 	</h2>
 
 	<p class="-mt-4 -mb-3 font-black text-lg">
-		If you would like to contact the development team, please use the email
-		found on the "Resources" card.
+		如果您想联系开发团队，请使用"资源"卡片上找到的邮箱。
 	</p>
 
 	<!-- Main contributors -->
@@ -72,11 +71,10 @@
 	<!-- Notable contributors -->
 	<div class="flex flex-col gap-4">
 		<div class="flex flex-col gap-1">
-			<h2 class="text-base font-bold">Notable contributors</h2>
+			<h2 class="text-base font-bold">主要贡献者</h2>
 			<div class="flex flex-col gap-2">
 				<p class="text-base text-muted font-normal">
-					We'd like to thank these people for their major
-					contributions to VERT.
+					我们要感谢这些人为VERT做出的重大贡献。
 				</p>
 				<div class="flex flex-col gap-2">
 					{#each notableContribs as contrib}
@@ -90,33 +88,29 @@
 		<!-- GitHub contributors -->
 		<div class="flex flex-col gap-4">
 			<div class="flex flex-col gap-1">
-				<h2 class="text-base font-bold">GitHub contributors</h2>
+				<h2 class="text-base font-bold">GitHub贡献者</h2>
 				{#if ghContribs && ghContribs.length > 0}
 					<p class="text-base text-muted font-normal">
-						Big <a
-							class="text-black dynadark:text-white"
-							href="/jpegify">thanks</a
-						>
-						to all these people for helping out!
+						非常感谢所有帮助过的人！
 						<a
 							class="text-blue-500 font-normal hover:underline"
 							href={GITHUB_URL_VERT}
 							target="_blank"
 							rel="noopener noreferrer"
 						>
-							Want to help too?
+							也想帮忙吗？
 						</a>
 					</p>
 				{:else}
 					<p class="text-base text-muted font-normal italic">
-						Seems like no one has contributed yet...
+						看起来还没有人贡献过...
 						<a
 							class="text-blue-500 font-normal hover:underline"
 							href={GITHUB_URL_VERT}
 							target="_blank"
 							rel="noopener noreferrer"
 						>
-							be the first to contribute!
+							成为第一个贡献者吧！
 						</a>
 					</p>
 				{/if}
@@ -131,12 +125,10 @@
 				</div>
 			{/if}
 
-			<h2 class="mt-2 -mb-2">Libraries</h2>
+			<h2 class="mt-2 -mb-2">库</h2>
 			<p class="font-normal">
-				A big thanks to FFmpeg (audio, video), Imagemagick (images) and
-				Pandoc (documents) for maintaining such excellent libraries for
-				so many years. VERT relies on them to provide you with your
-				conversions.
+				非常感谢FFmpeg（音频、视频）、Imagemagick（图像）和Pandoc（文档）多年来维护如此优秀的库。
+				VERT依赖它们为您提供转换服务。
 			</p>
 		</div>
 	</div></Panel
