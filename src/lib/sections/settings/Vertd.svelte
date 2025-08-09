@@ -6,6 +6,7 @@
 	import clsx from "clsx";
 	import Dropdown from "$lib/components/functional/Dropdown.svelte";
 	import { vertdLoaded } from "$lib/store/index.svelte";
+	import { tr } from "$lib/i18n";
 
 	let vertdCommit = $state<string | null>(null);
 	let abortController: AbortController | null = null;
@@ -55,7 +56,7 @@
 				class="inline-block -mt-1 mr-2 bg-accent-red p-2 rounded-full overflow-visible"
 				color="black"
 			/>
-			视频转换
+{$tr("settings.vertd.title")}
 		</h2>
 		<p
 			class={clsx("text-sm font-normal", {
@@ -64,85 +65,74 @@
 				"!text-muted": vertdCommit === "loading",
 			})}
 		>
-			状态: {vertdCommit
+{$tr("settings.vertd.status")}: {vertdCommit
 				? vertdCommit === "loading"
-					? "加载中..."
-					: `可用，提交ID ${vertdCommit}`
-				: "不可用（URL是否正确？）"}
+					? $tr("common.loading")
+					: `${$tr("settings.vertd.available")}, ${$tr("settings.vertd.commitId")} ${vertdCommit}`
+				: $tr("settings.vertd.unavailable")}
 		</p>
 		<div class="flex flex-col gap-8">
 			<div class="flex flex-col gap-4">
 				<p class="text-sm text-muted font-normal">
-					<code>vertd</code>项目是FFmpeg的服务器包装器。
-					这允许您通过VERT的Web界面的便利性转换视频，同时仍然能够利用GPU的力量尽可能快地完成转换。
+					{@html $tr("settings.vertd.description1")}
 				</p>
 				<p class="text-sm text-muted font-normal">
-					我们为您的便利托管了一个公共实例，但如果您知道自己在做什么，在您的PC或服务器上托管自己的实例也很容易。您可以下载服务器二进制文件<a
-						href={GITHUB_URL_VERTD}
-						target="_blank">这里</a
-					> - 设置过程在未来会变得更容易，敬请期待！
+					{@html $tr("settings.vertd.description2").replace("%link%", `<a href="${GITHUB_URL_VERTD}" target="_blank">${$tr("settings.vertd.here")}</a>`)}
 				</p>
 				<div class="flex flex-col gap-2">
-					<p class="text-base font-bold">实例URL</p>
+					<p class="text-base font-bold">{$tr("settings.vertd.instanceUrl")}</p>
 					<input
 						type="text"
-						placeholder="示例: http://localhost:24153"
+						placeholder={$tr("settings.vertd.urlPlaceholder")}
 						bind:value={settings.vertdURL}
 					/>
 				</div>
 				<div class="flex flex-col gap-4">
 					<div class="flex flex-col gap-2">
-						<p class="text-base font-bold">转换速度</p>
+						<p class="text-base font-bold">{$tr("settings.vertd.conversionSpeed.title")}</p>
 						<p class="text-sm text-muted font-normal">
-							这描述了速度和质量之间的权衡。更快的速度会导致质量降低，但会更快地完成任务。
+							{$tr("settings.vertd.conversionSpeed.description")}
 						</p>
 					</div>
 					<Dropdown
 						options={[
-							"极慢",
-							"较慢",
-							"慢",
-							"中等",
-							"快",
-							"极快",
+							$tr("settings.vertd.speeds.verySlow"),
+							$tr("settings.vertd.speeds.slower"),
+							$tr("settings.vertd.speeds.slow"),
+							$tr("settings.vertd.speeds.medium"),
+							$tr("settings.vertd.speeds.fast"),
+							$tr("settings.vertd.speeds.ultraFast"),
 						]}
 						settingsStyle
 						selected={(() => {
 							switch (settings.vertdSpeed) {
 								case "verySlow":
-									return "极慢";
+									return $tr("settings.vertd.speeds.verySlow");
 								case "slower":
-									return "较慢";
+									return $tr("settings.vertd.speeds.slower");
 								case "slow":
-									return "慢";
+									return $tr("settings.vertd.speeds.slow");
 								case "medium":
-									return "中等";
+									return $tr("settings.vertd.speeds.medium");
 								case "fast":
-									return "快";
+									return $tr("settings.vertd.speeds.fast");
 								case "ultraFast":
-									return "极快";
+									return $tr("settings.vertd.speeds.ultraFast");
 							}
 						})()}
 						onselect={(selected) => {
-							switch (selected) {
-								case "极慢":
-									settings.vertdSpeed = "verySlow";
-									break;
-								case "较慢":
-									settings.vertdSpeed = "slower";
-									break;
-								case "慢":
-									settings.vertdSpeed = "slow";
-									break;
-								case "中等":
-									settings.vertdSpeed = "medium";
-									break;
-								case "快":
-									settings.vertdSpeed = "fast";
-									break;
-								case "极快":
-									settings.vertdSpeed = "ultraFast";
-									break;
+							if (selected === $tr("settings.vertd.speeds.verySlow")) {
+								settings.vertdSpeed = "verySlow";
+							} else if (selected === $tr("settings.vertd.speeds.slower")) {
+								settings.vertdSpeed = "slower";
+							} else if (selected === $tr("settings.vertd.speeds.slow")) {
+								settings.vertdSpeed = "slow";
+							} else if (selected === $tr("settings.vertd.speeds.medium")) {
+								settings.vertdSpeed = "medium";
+							} else if (selected === $tr("settings.vertd.speeds.fast")) {
+								settings.vertdSpeed = "fast";
+							} else if (selected === $tr("settings.vertd.speeds.ultraFast")) {
+								settings.vertdSpeed = "ultraFast";
 							}
 						}}
 					/>

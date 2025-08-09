@@ -3,6 +3,7 @@
 	import Tooltip from "$lib/components/visual/Tooltip.svelte";
 	import { converters } from "$lib/converters";
 	import { vertdLoaded } from "$lib/store/index.svelte";
+	import { tr } from "$lib/i18n";
 	import clsx from "clsx";
 	import { AudioLines, BookText, Check, Film, Image } from "lucide-svelte";
 
@@ -22,24 +23,24 @@
 			icon: typeof Image;
 		};
 	} = $derived({
-		Images: {
+		[$tr("home.images")]: {
 			ready:
 				converters.find((c) => c.name === "imagemagick")?.ready ||
 				false,
 			formats: getSupportedFormats("imagemagick"),
 			icon: Image,
 		},
-		Audio: {
+		[$tr("home.audio")]: {
 			ready: converters.find((c) => c.name === "ffmpeg")?.ready || false,
 			formats: getSupportedFormats("ffmpeg"),
 			icon: AudioLines,
 		},
-		Documents: {
+		[$tr("home.documents")]: {
 			ready: converters.find((c) => c.name === "pandoc")?.ready || false,
 			formats: getSupportedFormats("pandoc"),
 			icon: BookText,
 		},
-		Video: {
+		[$tr("home.video")]: {
 			ready:
 				converters.find((c) => c.name === "vertd")?.ready ||
 				(false && $vertdLoaded),
@@ -75,13 +76,12 @@
 				<h1
 					class="text-4xl px-12 md:p-0 md:text-6xl flex-wrap tracking-tight leading-tight md:leading-[72px] mb-4 md:mb-6"
 				>
-					您会喜欢的文件转换器。
+					{$tr("home.title")}
 				</h1>
 				<p
 					class="font-normal px-5 md:p-0 text-lg md:text-xl text-black text-muted dynadark:text-muted"
 				>
-					所有图像、音频和文档处理都在您的设备上完成。视频在我们的超快服务器上转换。
-					无文件大小限制，无广告，完全开源。
+					{$tr("home.description")}
 				</p>
 			</div>
 			<div class="flex-grow w-full h-72">
@@ -93,7 +93,7 @@
 	<hr />
 
 	<div class="mt-10 md:mt-16">
-		<h2 class="text-center text-4xl">VERT 支持...</h2>
+		<h2 class="text-center text-4xl">{$tr("home.supportedFormats")}</h2>
 
 		<div class="flex gap-4 mt-8 md:flex-row flex-col">
 			{#each Object.entries(status) as [key, s]}
@@ -102,39 +102,43 @@
 					<div class="file-category-card-inner">
 						<div
 							class={clsx("icon-container", {
-								"bg-accent-blue": key === "Images",
-								"bg-accent-purple": key === "Audio",
-								"bg-accent-green": key === "Documents",
-								"bg-accent-red": key === "Video",
+								"bg-accent-blue": key === $tr("home.images"),
+								"bg-accent-purple": key === $tr("home.audio"),
+								"bg-accent-green":
+									key === $tr("home.documents"),
+								"bg-accent-red": key === $tr("home.video"),
 							})}
 						>
 							<Icon size="20" />
 						</div>
+
 						<span>{key}</span>
 					</div>
 
 					<div class="file-category-card-content flex-grow gap-4">
-						{#if key === "Video"}
+						{#if key === $tr("home.video")}
 							<p>
-								视频默认上传到服务器进行处理，了解如何本地设置
+								{$tr("home.videoProcessingNote") ||
+									"视频默认上传到服务器进行处理，了解如何本地设置"}
 								<a
 									target="_blank"
 									href="https://github.com/VERT-sh/VERT/wiki/How-to-convert-video-with-VERT"
-									>这里</a
+									>{$tr("home.here") || "这里"}</a
 								>。
 							</p>
 						{:else}
 							<p class="flex tems-center justify-center gap-2">
-								<Check size="20" /> 本地完全支持
+								<Check size="20" />
+								{$tr("home.localSupport") || "本地完全支持"}
 							</p>
 						{/if}
 						<p>
-							<b>状态: </b>
-							{s.ready ? "就绪" : "未就绪"}
+							<b>{$tr("home.status") || "状态"}: </b>
+							{s.ready ? $tr("home.ready") : $tr("home.loading")}
 						</p>
 						<div>
 							<span class="flex flex-wrap justify-center">
-								<b>支持的格式:&nbsp;</b>
+								<b>{$tr("home.supportedFormats")}:&nbsp;</b>
 								{#each s.formats.split(", ") as format, index}
 									{@const isPartial = format.endsWith("*")}
 									{@const formatName = isPartial

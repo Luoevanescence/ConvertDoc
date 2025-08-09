@@ -24,6 +24,7 @@
 	import { browser } from "$app/environment";
 	import { page } from "$app/state";
 	import { initStores as initAnimStores } from "$lib/animation/index.js";
+	import { initLanguage } from "$lib/i18n";
 
 	let { children, data } = $props();
 	let enablePlausible = $state(false);
@@ -62,6 +63,7 @@
 
 	onMount(() => {
 		initAnimStores();
+		initLanguage();
 
 		isMobile.set(window.innerWidth <= 768);
 		window.addEventListener("resize", () => {

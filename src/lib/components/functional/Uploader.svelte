@@ -5,6 +5,7 @@
 	import { onMount } from "svelte";
 	import { effects, files } from "$lib/store/index.svelte";
 	import { converters } from "$lib/converters";
+	import { tr } from "$lib/i18n";
 	import { goto } from "$app/navigation";
 	import { page } from "$app/state";
 
@@ -98,7 +99,7 @@
 			<UploadIcon class="w-full h-full text-on-accent" />
 		</div>
 		<h2 class="text-center text-2xl font-semibold mt-4">
-			拖放或点击来{jpegify ? "JPEGIFY" : "转换"}
+			{$tr("uploader.dragOrClick") || "拖放或点击"}
 		</h2>
 	</Panel>
 </button>

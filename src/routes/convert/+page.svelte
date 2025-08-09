@@ -14,6 +14,7 @@
 		vertdLoaded,
 	} from "$lib/store/index.svelte";
 	import { VertFile } from "$lib/types";
+	import { tr } from "$lib/i18n";
 	import {
 		AudioLines,
 		BookText,
@@ -120,23 +121,23 @@
 	<Panel class="p-5 flex flex-col min-w-0 gap-4 relative">
 		<div class="flex-shrink-0 h-8 w-full flex items-center gap-2">
 			{#if !converters.length}
-				<Tooltip text="未知文件类型" position="bottom">
+				<Tooltip text={$tr('convert.unknownFile') || '未知文件类型'} position="bottom">
 					<FileQuestionIcon size="24" class="flex-shrink-0" />
 				</Tooltip>
 			{:else if isAudio}
-				<Tooltip text="音频文件" position="bottom">
+				<Tooltip text={$tr('convert.audioFile') || '音频文件'} position="bottom">
 					<AudioLines size="24" class="flex-shrink-0" />
 				</Tooltip>
 			{:else if isVideo}
-				<Tooltip text="视频文件" position="bottom">
+				<Tooltip text={$tr('convert.videoFile') || '视频文件'} position="bottom">
 					<FilmIcon size="24" class="flex-shrink-0" />
 				</Tooltip>
 			{:else if isDocument}
-				<Tooltip text="文档文件" position="bottom">
+				<Tooltip text={$tr('convert.documentFile') || '文档文件'} position="bottom">
 					<BookText size="24" class="flex-shrink-0" />
 				</Tooltip>
 			{:else}
-				<Tooltip text="图像文件" position="bottom">
+				<Tooltip text={$tr('convert.imageFile') || '图像文件'} position="bottom">
 					<ImageIcon size="24" class="flex-shrink-0" />
 				</Tooltip>
 			{/if}
@@ -172,10 +173,10 @@
 					class="h-full flex flex-col text-center justify-center text-failure"
 				>
 					<p class="font-body font-bold">
-						我们无法转换此文件。
+						{$tr('convert.cannotConvert') || '我们无法转换此文件。'}
 					</p>
 					<p class="font-normal">
-						您在做什么..？您应该运行vertd服务器！
+						{$tr('convert.runVertdServer') || '您在做什么..？您应该运行vertd服务器！'}
 					</p>
 				</div>
 			{:else}
@@ -183,10 +184,10 @@
 					class="h-full flex flex-col text-center justify-center text-failure"
 				>
 					<p class="font-body font-bold">
-						我们无法转换此文件。
+						{$tr('convert.cannotConvert') || '我们无法转换此文件。'}
 					</p>
 					<p class="font-normal">
-						仅支持图像、视频、音频和文档文件
+						{$tr('convert.supportedFilesOnly') || '仅支持图像、视频、音频和文档文件'}
 					</p>
 				</div>
 			{/if}
@@ -194,10 +195,9 @@
 			<div
 				class="h-full flex flex-col text-center justify-center text-failure"
 			>
-				<p class="font-body font-bold">我们无法转换此文件。</p>
+				<p class="font-body font-bold">{$tr('convert.cannotConvert') || '我们无法转换此文件。'}</p>
 				<p class="font-normal">
-					找不到vertd实例来启动视频转换。
-					您确定实例URL设置正确吗？
+					{$tr('convert.vertdNotFound') || '找不到vertd实例来启动视频转换。您确定实例URL设置正确吗？'}
 				</p>
 			</div>
 		{:else}
@@ -249,7 +249,7 @@
 							onselect={(option) => handleSelect(option, file)}
 						/>
 						<div class="w-full flex items-center justify-between">
-													<Tooltip text="转换此文件" position="bottom">
+													<Tooltip text={$tr('convert.convertFile') || '转换此文件'} position="bottom">
 							<button
 								class="btn {$effects
 									? ''
@@ -267,7 +267,7 @@
 							</button>
 						</Tooltip>
 						<Tooltip
-							text="下载此文件"
+							text={$tr('convert.downloadFile') || '下载此文件'}
 							position="bottom"
 						>
 								<button

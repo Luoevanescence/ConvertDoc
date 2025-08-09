@@ -16,9 +16,9 @@
 	<div
 		class="w-full h-full flex items-center justify-center text-muted gap-3 relative"
 	>
-		<p>© {year} VERT.</p>
+		<!-- <p>© {year} VERT.</p>
 		{#each items as [name, url] (name)}
-			<!-- bullet point -->
+			
 			<p>•</p>
 			<a
 				class="hover:underline font-normal"
@@ -27,7 +27,7 @@
 			>
 				{name}
 			</a>
-		{/each}
+		{/each} -->
 	</div>
 
 	<div

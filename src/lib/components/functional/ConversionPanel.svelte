@@ -7,6 +7,7 @@
 	import ProgressBar from "../visual/ProgressBar.svelte";
 	import FormatDropdown from "./FormatDropdown.svelte";
 	import { categories } from "$lib/converters";
+	import { tr } from "$lib/i18n";
 
 	const length = $derived(files.files.length);
 	const progress = $derived(files.files.filter((f) => f.result).length);
@@ -27,7 +28,7 @@
 				disabled={!files.ready}
 			>
 				<RefreshCw size="24" />
-				<p>转换全部</p>
+				<p>{$tr("convert.convertAll")}</p>
 			</button>
 			<button
 				class="btn {$effects
@@ -37,7 +38,7 @@
 				onclick={() => files.downloadAll()}
 			>
 				<FolderArchiveIcon size="24" />
-				<p>全部下载为.zip</p>
+				<p>{$tr("convert.downloadAll")}</p>
 			</button>
 			{#if $isMobile}
 				<button
@@ -48,10 +49,10 @@
 					onclick={() => (files.files = [])}
 				>
 					<Trash2Icon size="24" />
-					<p>删除所有文件</p>
+					<p>{$tr("convert.removeAllFiles")}</p>
 				</button>
 			{:else}
-				<Tooltip text="删除所有文件" position="right">
+				<Tooltip text={$tr("convert.removeAllFiles")} position="right">
 					<button
 						class="btn p-4 {$effects
 							? ''
@@ -66,7 +67,7 @@
 		</div>
 		<div class="w-full bg-separator h-0.5 flex md:hidden"></div>
 		<div class="flex items-center gap-2">
-			<p class="whitespace-nowrap text-xl">全部设置为</p>
+			<p class="whitespace-nowrap text-xl">{$tr("convert.setAllTo")}</p>
 			{#if files.requiredConverters.length === 1}
 				<FormatDropdown
 					onselect={(r) =>
@@ -79,7 +80,7 @@
 					{categories}
 				/>
 			{:else}
-				<Dropdown options={["不适用"]} disabled />
+				<Dropdown options={[$tr("convert.notApplicable")]} disabled />
 			{/if}
 		</div>
 	</div>

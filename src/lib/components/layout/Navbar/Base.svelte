@@ -22,6 +22,8 @@
 	import Logo from "../../visual/svg/Logo.svelte";
 	import { beforeNavigate } from "$app/navigation";
 	import Tooltip from "$lib/components/visual/Tooltip.svelte";
+	import LanguageToggle from "../../functional/LanguageToggle.svelte";
+	import { tr } from "$lib/i18n";
 
 	const items = $derived<
 		{
@@ -33,13 +35,13 @@
 		}[]
 	>([
 		{
-			name: "上传",
+			name: $tr("navigation.home"),
 			url: "/",
 			activeMatch: (pathname) => pathname === "/",
 			icon: UploadIcon,
 		},
 		{
-			name: "转换",
+			name: $tr("navigation.convert"),
 			url: "/convert/",
 			activeMatch: (pathname) =>
 				pathname === "/convert/" || pathname === "/convert",
@@ -47,7 +49,7 @@
 			badge: files.files.length,
 		},
 		{
-			name: "设置",
+			name: $tr("navigation.settings"),
 			url: "/settings/",
 			activeMatch: (pathname) => pathname.startsWith("/settings"),
 			icon: SettingsIcon,
@@ -179,6 +181,8 @@
 		{#each items as item, i (item.url)}
 			{@render link(item, i)}
 		{/each}
+		<div class="w-0.5 bg-separator h-full hidden md:flex"></div>
+		<LanguageToggle  />
 		<div class="w-0.5 bg-separator h-full hidden md:flex"></div>
 		<Tooltip text="切换主题" position="right">
 			<button

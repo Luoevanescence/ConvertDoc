@@ -13,6 +13,7 @@
 		PlayIcon,
 		SunIcon,
 	} from "lucide-svelte";
+	import { tr } from "$lib/i18n";
 
 	let lightElement: HTMLButtonElement;
 	let darkElement: HTMLButtonElement;
@@ -61,14 +62,14 @@
 				class="inline-block -mt-1 mr-2 bg-accent-purple p-2 rounded-full"
 				color="black"
 			/>
-			外观
+{$tr("settings.appearance")}
 		</h2>
 		<div class="flex flex-col gap-8">
 			<div class="flex flex-col gap-4">
 				<div class="flex flex-col gap-2">
-					<p class="text-base font-bold">亮度主题</p>
+					<p class="text-base font-bold">{$tr("settings.theme.title")}</p>
 					<p class="text-sm text-muted font-normal italic">
-						想要阳光明媚的闪光，还是安静孤独的夜晚？
+						{$tr("settings.theme.description")}
 					</p>
 				</div>
 				<div class="flex flex-col gap-3 w-full">
@@ -81,7 +82,7 @@
 								: '!scale-100'} flex-1 p-4 rounded-lg text-black dynadark:text-white flex items-center justify-center"
 						>
 							<SunIcon size="24" class="inline-block mr-2" />
-							浅色
+{$tr("settings.theme.light")}
 						</button>
 
 						<button
@@ -92,16 +93,16 @@
 								: '!scale-100'} flex-1 p-4 rounded-lg text-black flex items-center justify-center"
 						>
 							<MoonIcon size="24" class="inline-block mr-2" />
-							深色
+{$tr("settings.theme.dark")}
 						</button>
 					</div>
 				</div>
 			</div>
 			<div class="flex flex-col gap-4">
 				<div class="flex flex-col gap-2">
-					<p class="text-base font-bold">效果设置</p>
+					<p class="text-base font-bold">{$tr("settings.effects.title")}</p>
 					<p class="text-sm text-muted font-normal italic">
-						您喜欢花哨的效果，还是更静态的体验？
+						{$tr("settings.effects.description")}
 					</p>
 				</div>
 				<div class="flex flex-col gap-3 w-full">
@@ -114,7 +115,7 @@
 								: '!scale-100'} flex-1 p-4 rounded-lg text-black dynadark:text-white flex items-center justify-center"
 						>
 							<PlayIcon size="24" class="inline-block mr-2" />
-							启用
+{$tr("settings.effects.enable")}
 						</button>
 
 						<button
@@ -125,7 +126,7 @@
 								: '!scale-100'} flex-1 p-4 rounded-lg text-black dynadark:text-white flex items-center justify-center"
 						>
 							<PauseIcon size="24" class="inline-block mr-2" />
-							禁用
+{$tr("settings.effects.disable")}
 						</button>
 					</div>
 				</div>
