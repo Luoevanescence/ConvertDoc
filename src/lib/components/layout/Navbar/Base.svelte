@@ -52,12 +52,12 @@
 			activeMatch: (pathname) => pathname.startsWith("/settings"),
 			icon: SettingsIcon,
 		},
-		{
-			name: "关于",
-			url: "/about/",
-			activeMatch: (pathname) => pathname.startsWith("/about"),
-			icon: InfoIcon,
-		},
+		// {
+		// 	name: "关于",
+		// 	url: "/about/",
+		// 	activeMatch: (pathname) => pathname.startsWith("/about"),
+		// 	icon: InfoIcon,
+		// },
 	]);
 
 	let links = $state<HTMLAnchorElement[]>([]);

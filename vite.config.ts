@@ -43,6 +43,7 @@ export default defineConfig(({ command }) => {
 		},
 		build: {
 			target: "esnext",
+			base: "./",
 		},
 	};
 });

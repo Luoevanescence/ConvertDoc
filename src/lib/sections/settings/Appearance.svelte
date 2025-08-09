@@ -21,7 +21,7 @@
 
 	const updateEffectsClasses = (value: boolean) => {
 		if (!enableEffectsElement || !disableEffectsElement) return;
-		
+
 		if (value) {
 			enableEffectsElement.classList.add("selected");
 			disableEffectsElement.classList.remove("selected");
